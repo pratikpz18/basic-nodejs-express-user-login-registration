@@ -17,7 +17,8 @@ db.once('open',()=>{
 	console.log("database connected")
 })
 app.use(morgan('dev'))
-app.set("view engine", "ejs"); 
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + '/public')); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(function(req, res, next) {
